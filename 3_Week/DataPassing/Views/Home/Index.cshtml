@@ -1,0 +1,11 @@
+﻿<h1>Hello, @ViewData["Name"]</h1>
+<hr>
+<h5>Coming from @ViewBag.Location</h5>
+<hr>
+<h3>Submit Some Stuff</h3>
+<form action="/process" method="POST">
+    <input type="text" name="firstName" placeholder="Enter a First Name">
+    <input type="text" name="lastName" placeholder="Enter a Last Name">
+    <input type="text" name="location" placeholder="Enter a Location">
+    <button>Send IT</button>
+</form>
