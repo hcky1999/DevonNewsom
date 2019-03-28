@@ -1,0 +1,31 @@
+﻿@model List<Person>
+
+<h1>All of the people!</h1>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var person in Model)
+    {
+        <tr>
+            <td>@person.FirstName @person.LastName</td>
+            <td>@person.Location</td>
+            <td>@person.Age</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<hr>
+<h3>Submit Some Stuff</h3>
+<form action="/process" method="POST">
+    <input type="text" name="FirstName" placeholder="Enter a First Name">
+    <input type="text" name="LastName" placeholder="Enter a Last Name">
+    <input type="text" name="Location" placeholder="Enter a Location">
+    <input type="date" name="DOB" placeholder="Enter a DOB">
+    <button>Send IT</button>
+</form>
