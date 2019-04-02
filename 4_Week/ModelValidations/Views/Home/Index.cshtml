@@ -1,0 +1,23 @@
+﻿@model List<Person>
+
+<h1>All of the people!</h1>
+<a href="/new">Add a Person</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var person in Model)
+    {
+        <tr>
+            <td>@person.FirstName @person.LastName</td>
+            <td>@person.Location</td>
+            <td>@person.Age</td>
+        </tr>
+    }
+    </tbody>
+</table>
