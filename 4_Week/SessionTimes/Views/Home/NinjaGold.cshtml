@@ -1,0 +1,36 @@
+<h2>Ninja Gold</h2>
+<h5>@TempData["goldMessage"]</h5>
+<h4><input type="text" value="@ViewBag.TotalGold" disabled="disabled"></h4>
+<hr>
+<div class="building">
+    <h4>Cave</h4>
+    <p>Get (1 - 3) golds from the Cave</p>
+    <form action="/gold" method="post">
+        <input type="hidden" name="building" value="cave">
+        <button>GOLD</button>
+    </form>
+</div>
+<div class="building">
+    <h4>House</h4>
+    <p>Get (2 - 5) golds from the House</p>
+    <form action="/gold" method="post">
+        <input type="hidden" name="building" value="house">
+        <button>GOLD</button>
+    </form>
+</div>
+<div class="building">
+    <h4>Farm</h4>
+    <p>Get (10 - 20) golds from the Farm</p>
+    <form action="/gold" method="post">
+        <input type="hidden" name="building" value="farm">
+        <button>GOLD</button>
+    </form>
+</div>
+<div class="building">
+    <h4>Casino</h4>
+    <p>Get/Lost (0 - 50) golds from the Casino</p>
+    <form action="/gold" method="post">
+        <input type="hidden" name="building" value="casino">
+        <button>GOLD</button>
+    </form>
+</div>

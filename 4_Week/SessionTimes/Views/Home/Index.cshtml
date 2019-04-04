@@ -1,0 +1,20 @@
+﻿<h2>Counter Game</h2>
+<h4>Welcome, @ViewBag.PlayerName</h4>
+<p>@TempData["resetMessage"]</p>
+<h4>The Count is: @ViewBag.Count</h4>
+<h3>Enter your name, player:</h3>
+<form action="/newPlayer" method="post">
+    <input type="text" name="player">
+    <button>Submit</button>
+</form>
+<hr>
+<a href="/count">
+    <button>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </button>
+</a>
+<a href="/reset">
+    <button>
+        <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+    </button>
+</a>
