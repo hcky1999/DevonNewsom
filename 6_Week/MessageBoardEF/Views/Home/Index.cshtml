@@ -1,0 +1,30 @@
+﻿@model List<Post>
+<h1>Check out these posts!</h1>
+<a href="/new">Add a Post!</a>
+<hr>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Post Id</th>
+            <th>User</th>
+            <th>Topic</th>
+            <th>Content</th>
+            <th>Date Created</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var post in Model)
+    {
+        <tr>
+            <td>@post.PostId</td>
+            <td>@post.Username</td>
+            <td>@post.Topic</td>
+            <td>@post.Content</td>
+            <td>@post.CreatedAt</td>
+            <td><a href="/delete/@post.PostId">Delete</a></td>
+            <td><a href="/edit/@post.PostId">Edit</a></td>
+        </tr>
+    }
+    </tbody>
+</table>
