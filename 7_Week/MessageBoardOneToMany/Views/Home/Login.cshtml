@@ -1,0 +1,17 @@
+@model LoginUser
+<h2>Login to our cool site!</h2>
+<a href="/">New? Go sign up!</a>
+<hr>
+<form asp-action="HandleLogin" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="Email"></span>
+        <label asp-for="Email"></label>
+        <input class="form-control" asp-for="Email">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Password"></span>
+        <label asp-for="Password"></label>
+        <input class="form-control" asp-for="Password">
+    </div>
+    <button>Login!</button>
+</form>

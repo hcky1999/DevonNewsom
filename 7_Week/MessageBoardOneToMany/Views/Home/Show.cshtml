@@ -1,0 +1,19 @@
+@model User
+<h2>Details for User #@Model.UserId</h2>
+<hr>
+<h4>Name</h4>
+<p>@Model.FirstName @Model.LastName</p>
+<h4>Email</h4>
+<p>@Model.Email</p>
+<h4>Name</h4>
+<p>@Model.FirstName @Model.LastName</p>
+<h4>Signup Date</h4>
+<p>@Model.CreatedAt</p>
+<h4>Number of Posts</h4>
+<p>@Model.CreatedPosts.Count</p>
+<h4>Longest Post</h4>
+@{
+    int longestLength = Model.CreatedPosts.Max(p => p.Content.Length);
+    Post longestPost = Model.CreatedPosts.FirstOrDefault(p => p.Content.Length == longestLength);
+}
+<p>@longestPost.Content</p>
