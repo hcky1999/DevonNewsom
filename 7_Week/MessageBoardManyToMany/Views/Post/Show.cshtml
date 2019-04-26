@@ -1,0 +1,20 @@
+@model Post
+<h2>Topic: @Model.Topic</h2>
+<hr>
+<blockquote>@Model.Content</blockquote>
+<p>Posted On: @Model.CreatedAt</p>
+<hr>
+<h4>Lovers:</h4>
+<ul>
+@foreach(var vote in Model.Votes.Where(v => v.IsUpvote))
+{
+    <li><a href="/@vote.UserId">@vote.Voter.FirstName @vote.Voter.LastName</a></li>
+}
+</ul>
+<h4>Haters:</h4>
+<ul>
+@foreach(var vote in Model.Votes.Where(v => !v.IsUpvote))
+{
+    <li><a href="/@vote.UserId">@vote.Voter.FirstName @vote.Voter.LastName</a></li>
+}
+</ul>

@@ -1,0 +1,15 @@
+@model Post
+<h1>Edit a Post!</h1>
+<form asp-action="Update" asp-controller="Post" asp-route-postId="@Model.PostId" method="post">
+    <div class="form-group">
+        <span asp-validation-for="Topic"></span>
+        <label asp-for="Topic"></label>
+        <input class="form-control" asp-for="Topic">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Content"></span>
+        <label asp-for="Content"></label>
+        <textarea class="form-control" asp-for="Content"></textarea>
+    </div>
+    <button>Add new Post!</button>
+</form>

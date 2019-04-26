@@ -1,0 +1,47 @@
+﻿@model List<Post>
+<h1>Check out these posts!</h1>
+<a asp-action="New">Add a Post!</a>
+<hr>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Post Score</th>
+            <th>User</th>
+            <th>Topic</th>
+            <th>Content</th>
+            <th>Date Created</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var post in Model)
+    {
+        int netScore = post.Votes.Where(v => v.IsUpvote).Count() - post.Votes.Where(v => !v.IsUpvote).Count();
+        <tr>
+           
+            <td>@netScore</td>
+            <td><a asp-action="Show" asp-controller="Home" asp-route-userId="@post.UserId">@post.Creator.FirstName @post.Creator.LastName</a></td>
+            <td>@post.Topic</td>
+            <td><a href="/posts/@post.PostId">@post.Content</a></td>
+            <td>@post.CreatedAt</td>
+            @{
+                if(post.UserId == ViewBag.UserId)
+                {
+                    <td><a href="/posts/delete/@post.PostId">Delete</a> | <a href="/posts/edit/@post.PostId">Edit</a></td>
+                }
+                else if(!post.Votes.Any(v => v.UserId == ViewBag.UserId))
+                {
+                    <td>
+                        <a class="glyphicon glyphicon-arrow-up" href="/posts/vote/@post.PostId/@true"></a>
+                        <a class="glyphicon glyphicon-arrow-down" href="/posts/vote/@post.PostId/@false"></a>
+                    </td>
+                }
+                else
+                {
+                    <td>Thanks for voting!</td>
+                }
+            }
+        </tr>
+    }
+    </tbody>
+</table>
