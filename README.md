@@ -10,6 +10,6 @@ To keep yourself organized, organize your directories here by week.  For example
       /Puzzles
    /Week_2
       /Human
-      /DeckOfCards
+      /HungryNinja
 ```
 #### Check out my .gitignore for a pretty exaustive list for ASPDOTNETCOREMVC

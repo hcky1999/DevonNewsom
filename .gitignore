@@ -52,7 +52,7 @@ obj/
 
 .vscode/
 
-wwwroot/lib/
+**/wwwroot/lib/
 
 TestResults/
 
